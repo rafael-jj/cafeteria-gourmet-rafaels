@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Adicione os links para imagens -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="/img/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Adicione os links para os estilos do Bootstrap aqui -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Home/Cafeteria Gourmet Rafaels Online :: Página Principal</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <!-- Popper.js first, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+
+    <!-- Conteúdo da sua página -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger border-bottom shadow-sm mb-3">
+        <div class="container">
+            <a class="navbar-brand" href="/"><b>Cafeteria Gourmet Rafaels Online</b></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/contato.html">Contato</a>
+                    </li>
+                </ul>
+                <div class="align-self-end">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="/index.html" class="nav-link text-white">Sair</a>
+                        </li>
+                        <li class="nav-item">
+                            <span id="contadorCarrinho"
+                                class="badge rounded-pill bg-light text-danger position-absolute ms-4 mt-0"
+                                title="produto(s) no carrinho"><small>0</small></span>
+                            <a href="/carrinho.html" class="nav-link text-white">
+                                <i class="bi-cart" style="font-size: 24px;line-height: 24px;"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </nav>
+
+    <div class="container">
+        <div id="carouselMain" class="carousel slide carousel bg-white" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselMain" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#carouselMain" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carouselMain" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="3000">
+                    <img src="/img/slides/slide01.jpg" class="d-none d-md-block w-100" alt>
+
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img src="/img/slides/slide02.jpg" class="d-none d-md-block w-100" alt>
+
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img src="/img/slides/slide03.jpg" class="d-none d-md-block w-100" alt>
+
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselMain" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselMain" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+        <hr class="mt-3">
+    </div>
+    <main class="flex-fill">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-5">
+                    <form class="justify-content-center justify-content-md-start mb-3 mb-md-0">
+                        <div class="input-group input-group-sm">
+                            <input type="text" class="form-control" placeholder="Digite aqui o que procura">
+                            <button class="btn btn-danger">Buscar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-12 col-md-7">
+                    <div class="d-flex flex-row-reverse justify-content-center justify-content-md-start">
+
+                    </div>
+                </div>
+            </div>
+
+            <hr mt-3>
+
+            <div class="row g-3">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="card text-center bg-light">
+                        <a href="#" class="position-absolute end-0 p-2 text-danger">
+                            <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i></a>
+                        <a href="/produto.html"> <img src="/img/000001.jpg" class="card-img-top"></a>
+                        <div class="card-header">
+                            R$ 10,80
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Cold
+                                Brew Leite</h5>
+                            <p class="card-text truncar-3l">
+                                Leite desnatado batido
+                                fornando espuma
+                                levemente adocicada.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <button onclick="adicionarAoCarrinho('Cold Brew Leite', 10.80, '/img/000001.jpg')"
+                                class="btn btn-danger mt-2 d-block">
+                                Adicionar ao Carrinho
+                            </button>
+                            <small class="text-success">Temos a pronta
+                                entrega</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="card text-center bg-light">
+                        <a href="#" class="position-absolute end-0 p-2 text-danger">
+                            <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                        </a>
+                        <img src="/img/000002.jpg" class="card-img-top">
+                        <div class="card-header">
+                            R$ 15,50
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Mont
+                                Blanc</h5>
+                            <p class="card-text truncar-3l">
+                                Feita de bebida batida
+                                com gelo, leite,
+                                essências e com opções
+                                com ou sem café.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <button onclick="adicionarAoCarrinho('Mont Blanc', 15.50, '/img/000002.jpg')"
+                                class="btn btn-danger mt-2 d-block">
+                                Adicionar ao Carrinho
+                            </button>
+                            <small class="text-success">temos
+                                a pronta
+                                entrega</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="card text-center bg-light">
+                        <a href="#" class="position-absolute end-0 p-2 text-danger">
+                            <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                        </a>
+                        <img src="/img/000003.jpg" class="card-img-top">
+                        <div class="card-header">
+                            R$ 20,90
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Mocha</h5>
+                            <p class="card-text truncar-3l">
+                                Chocolate, leite
+                                cremoso, café gourmet e
+                                chantilly.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-light disabled mt-2 d-block">
+                                <small>Reabastecendo
+                                    Estoque</small>
+                            </a>
+                            <small class="text-danger">
+                                <b>Produto Esgotado</b>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="card text-center bg-light">
+                        <a href="#" class="position-absolute end-0 p-2 text-danger">
+                            <i class="bi-suit-heart-fill" style="font-size: 24px; line-height: 24px;"></i>
+                        </a>
+                        <img src="/img/000004.jpg" class="card-img-top">
+                        <div class="card-header">
+                            R$ 12,50
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Irish Coffee</h5>
+                            <p class="card-text truncar-3l">
+                                Café com o açúcar, uísque e creme de leite batido.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <button onclick="adicionarAoCarrinho('Irish Coffee', 15.50, '/img/000004.jpg')"
+                                class="btn btn-danger mt-2 d-block">
+                                Adicionar ao Carrinho
+                            </button>
+                            <small class="text-success">temos
+                                a pronta
+                                entrega</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="card text-center bg-light">
+                        <a href="#" class="position-absolute end-0 p-2 text-danger">
+                            <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                        </a>
+                        <img src="/img/000005.jpg" class="card-img-top">
+                        <div class="card-header">
+                            R$ 15,50
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Café Cubano</h5>
+                            <p class="card-text truncar-3l">
+                                Café expresso, hortelãn, suco de limãoe cubos de gelo.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <button onclick="adicionarAoCarrinho('Café Cubano', 15.50, '/img/000005.jpg')"
+                                class="btn btn-danger mt-2 d-block">
+                                Adicionar ao Carrinho
+                            </button>
+                            <small class="text-success">temos
+                                a pronta
+                                entrega</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="card text-center bg-light">
+                        <a href="#" class="position-absolute end-0 p-2 text-danger">
+                            <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                        </a>
+                        <img src="/img/000006.jpg" class="card-img-top">
+                        <div class="card-header">
+                            R$ 18,00
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Caipirinha de Café</h5>
+                            <p class="card-text truncar-3l">
+                                Café expresso com Cachaça, Acuçar e Gelo.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <button onclick="adicionarAoCarrinho('Caipirinha de Café', 15.50, '/img/000006.jpg')"
+                                class="btn btn-danger mt-2 d-block">
+                                Adicionar ao Carrinho
+                            </button>
+                            <small class="text-success">temos
+                                a pronta
+                                entrega</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="card text-center bg-light">
+                        <a href="#" class="position-absolute end-0 p-2 text-danger">
+                            <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                        </a>
+                        <img src="/img/000007.jpg" class="card-img-top">
+                        <div class="card-header">
+                            R$ 20,00
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Coquetel de Café</h5>
+                            <p class="card-text truncar-3l">
+                                Café forte sem açúcar, leite condensado e gelo.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <button onclick="adicionarAoCarrinho('Coquetel de Café', 15.50, '/img/000007.jpg')"
+                                class="btn btn-danger mt-2 d-block">
+                                Adicionar ao Carrinho
+                            </button>
+                            <small class="text-success">temos
+                                a pronta
+                                entrega</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="card text-center bg-light">
+                        <a href="#" class="position-absolute end-0 p-2 text-danger">
+                            <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                        </a>
+                        <img src="/img/000008.jpg" class="card-img-top">
+                        <div class="card-header">
+                            R$ 4,50
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Expresso Martini</h5>
+                            <p class="card-text truncar-3l">
+                                Café expresso, vodka, licor de café co cubos de gelo.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <button onclick="adicionarAoCarrinho('Café vvvv', 15.50, '/img/000008.jpg')"
+                                class="btn btn-danger mt-2 d-block">
+                                Adicionar ao Carrinho
+                            </button>
+                            <small class="text-success">temos
+                                a pronta
+                                entrega</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="card text-center bg-light">
+                        <a href="#" class="position-absolute end-0 p-2 text-danger">
+                            <i class="bi-suit-heart-fill" style="font-size: 24px; line-height: 24px;"></i>
+                        </a>
+                        <img src="/img/000009.jpg" class="card-img-top">
+                        <div class="card-header">
+                            R$ 6,50
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Cactus Café</h5>
+                            <p class="card-text truncar-3l">
+                                Licor de café, tequila prata, Limão e cubos de gelo.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <button onclick="adicionarAoCarrinho('Cafe xxxxx', 15.50, '/img/000009.jpg')"
+                                class="btn btn-danger mt-2 d-block">
+                                Adicionar ao Carrinho
+                            </button>
+                            <small class="text-success">temos
+                                a pronta
+                                entrega</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="card text-center bg-light">
+                        <a href="#" class="position-absolute end-0 p-2 text-danger">
+                            <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                        </a>
+                        <img src="/img/000010.jpg" class="card-img-top">
+                        <div class="card-header">
+                            R$ 7,50
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Iced
+                                Late Macchiato</h5>
+                            <p class="card-text truncar-3l">
+                                Leite frio e dose de
+                                Expresso.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <button onclick="adicionarAoCarrinho('Iced Late Macchiato', 7.50, '/img/000010.jpg')"
+                                class="btn btn-danger mt-2 d-block">
+                                Adicionar ao Carrinho
+                            </button>
+                            <small class="text-success">temos
+                                a pronta
+                                entrega</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="card text-center bg-light">
+                        <a href="#" class="position-absolute end-0 p-2 text-danger">
+                            <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                        </a>
+                        <img src="/img/000011.jpg" class="card-img-top">
+                        <div class="card-header">
+                            R$ 11,50
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Expresso
+                                Collection</h5>
+                            <p class="card-text truncar-3l">
+                                Café Expreeso, sabores
+                                em Avelã e
+                                Brigadeiro.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <button onclick="adicionarAoCarrinho('Expresso Collection', 11.50, '/img/000011.jpg')"
+                                class="btn btn-danger mt-2 d-block">
+                                Adicionar ao Carrinho
+                            </button>
+                            <small class="text-success">temos
+                                a pronta
+                                entrega</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="card text-center bg-light">
+                        <a href="#" class="position-absolute end-0 p-2 text-danger">
+                            <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                        </a>
+                        <img src="/img/000012.jpg" class="card-img-top">
+                        <div class="card-header">
+                            R$ 9,50
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Chocolate Clássico</h5>
+                            <p class="card-text truncar-3l">
+                                Café Chocolate cremoso com cacau e chocolate ralado.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <button onclick="adicionarAoCarrinho('Chocolate Clássico', 9.50, '/img/000012.jpg')"
+                                class="btn btn-danger mt-2 d-block">
+                                Adicionar ao Carrinho
+                            </button>
+                            <small class="text-success">temos
+                                a pronta
+                                entrega</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <h2 id="msg"></h2>
+    <h2 id="greet"></h2>
+
+    <script>
+        // Função para adicionar um produto ao carrinho
+        function adicionarAoCarrinho(nomeProduto, precoProduto, imagemProduto) {
+            // Verifique se há uma lista de carrinho no armazenamento local
+            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+            // Verifique se o produto já está no carrinho
+            const produtoExistente = carrinho.find(produto => produto.nome === nomeProduto);
+
+            if (produtoExistente) {
+                // Se o produto já existe, apenas incremente a quantidade
+                produtoExistente.quantidade += 1;
+            } else {
+                // Caso contrário, adicione o produto ao carrinho com quantidade 1
+                carrinho.push({ nome: nomeProduto, preco: precoProduto, quantidade: 1, imagem: imagemProduto });
+            }
+
+            // Salve a lista atualizada no armazenamento local
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+            // Atualize a contagem do carrinho na barra de navegação
+            atualizarContagemCarrinho(carrinho.length);
+
+            // Notifique o cliente
+            alert('Produto adicionado ao carrinho!');
+
+            // Função para atualizar a contagem do carrinho na barra de navegação
+            function atualizarContagemCarrinho(contagem) {
+                const badge = document.getElementById('contadorCarrinho');
+                if (badge) {
+                    badge.innerText = contagem;
+                }
+            }
+            // Função para atualizar o ícone do carrinho
+            function atualizarIconeCarrinho() {
+                const carrinho = obterCarrinho();
+                atualizarContagemCarrinho(carrinho.length);
+            }
+        }
+
+
+    </script>
+
+    <div>
+        <footer class="border-top text-muted bg-light">
+            <div class="container">
+                <div class="row py-3">
+                    <div class="col-12 col-md-4 text-center">
+                        &copy; 2023-Cafeteria Gourmet Rafaels Ltda ME<br>
+                        Rua Virtual,171, Compulândia/PC
+                        <br>
+                        CPNJ 99.999.999/0001-99
+                    </div>
+                    <div class="col-12 col-md-4 text-center">
+                        <a href="/privacidade.html" class="text-decoration-none text-dark">
+                            Política de Privacidade
+                        </a><br>
+                        <a href="/termos.html" class="text-decoration-none text-dark">
+                            Termos de Uso
+                        </a><br>
+                        <a href="/quemsomos.html" class="text-decoration-none text-dark">
+                            Quem Somos
+                        </a><br>
+                        <a href="/trocas.html" class="text-decoration-none text-dark">
+                            Trocas e Devoluções
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-4 text-center">
+                        <a href="/contato.html" class="text-decoration-none text-dark">
+                            Contato pelo Site
+                        </a><br>
+                        E-mail: <a href="mailto:email@dominio.com" class="text-decoration-none text-dark">
+                            email@dominio.com
+                        </a><br>
+                        Telefone: <a href="phone:28999990000" class="text-decoration-none text-dark">
+                            (28) 99999-0000
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>
