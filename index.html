@@ -53,7 +53,7 @@
           // Simulação de armazenamento local
           const storedUsers = JSON.parse(localStorage.getItem('users')) || [];
           const user = storedUsers.find(u => u.email === email && u.password === password);
-
+          
           if (user) {
             alert('Login bem-sucedido!');
             // Redirecionar para a página home.html
