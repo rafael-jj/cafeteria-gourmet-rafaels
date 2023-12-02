@@ -99,6 +99,16 @@ th {
 }
 
 
+.texto-grande {
+    font-size: 25px;
+    font-stretch: bolder;
+}   
+
+.texto-grande-menu {
+    font-size: 38px;
+    font-stretch: bolder;
+}
+
 
 
 

@@ -52,7 +52,7 @@
                 <div class="align-self-end">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a href="index.html" class="nav-link text-white">Sair</a>
+                            <a href="index.html" id="btnSair" class="nav-link text-white">Sair</a>
                         </li>
                         <li class="nav-item">
                             <span id="contadorCarrinho"
@@ -61,7 +61,6 @@
                             <a href="carrinho.html" class="nav-link text-white">
                                 <i class="fas fa-shopping-cart" style="font-size: 24px; line-height: 24px;"></i>
                             </a>
-
                         </li>
                     </ul>
                 </div>
@@ -102,349 +101,520 @@
     </div>
     <main class="flex-fill">
         <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-5">
-                    <form class="justify-content-center justify-content-md-start mb-3 mb-md-0">
-                        <div class="input-group input-group-sm">
-                            <input type="text" class="form-control" placeholder="Digite aqui o que procura">
-                            <button class="btn btn-danger">Buscar</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-12 col-md-7">
-                    <div class="d-flex flex-row-reverse justify-content-center justify-content-md-start">
-
+            <div id="carouselMain" class="carousel slide carousel bg-white" data-bs-ride="carousel">
+                <div class="row">
+                    <div class="col-12 col-md-5">
+                        <form class="justify-content-center justify-content-md-start mb-3 mb-md-0">
                     </div>
-                </div>
-            </div>
-
-            <hr mt-3>
-
-            <div class="row g-3">
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                    <div class="card text-center bg-light">
-                        <a href="#" class="position-absolute end-0 p-2 text-danger">
-                            <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i></a>
-                        <a href="produto.html"> <img src="./img/000001.jpg" class="card-img-top"></a>
-                        <div class="card-header">
-                            R$ 10,80
+                    <div class="col-12 col-md-7">
+                        <div class="d-flex flex-row-reverse justify-content-center justify-content-md-start">
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Cold
-                                Brew Leite</h5>
-                            <p class="card-text truncar-3l">
-                                Café com leite desnatado batido
-                                fornando espuma
-                                levemente adocicada.
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <button onclick="adicionarAoCarrinho('Cold Brew Leite', 10.80, './img/000001.jpg')"
-                                class="btn btn-danger mt-2 d-block">
-                                Adicionar ao Carrinho
-                            </button>
-                            <small class="text-success">Temos a pronta
-                                entrega</small>
+                        <div>
+                            <h2 class="texto-grande-menu">Coffe Shop Menu</h2>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                    <div class="card text-center bg-light">
-                        <a href="#" class="position-absolute end-0 p-2 text-danger">
-                            <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
-                        </a>
-                        <img src="./img/000002.jpg" class="card-img-top">
-                        <div class="card-header">
-                            R$ 15,50
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Mont
-                                Blanc</h5>
-                            <p class="card-text truncar-3l">
-                                Bebida batida
-                                com leite, gelo,
-                                essências e com opções
-                                com ou sem café.
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <button onclick="adicionarAoCarrinho('Mont Blanc', 15.50, './img/000002.jpg')"
-                                class="btn btn-danger mt-2 d-block">
-                                Adicionar ao Carrinho
-                            </button>
-                            <small class="text-success">temos
-                                a pronta
-                                entrega</small>
-                        </div>
+                <hr class="mt-3">
+                <!-- Seção de Produtos em Destaque -->
+                <div class="row g-3">
+                    <div class="col-12">
                     </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                    <div class="card text-center bg-light">
-                        <a href="#" class="position-absolute end-0 p-2 text-danger">
-                            <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
-                        </a>
-                        <img src="./img/000003.jpg" class="card-img-top">
-                        <div class="card-header">
-                            R$ 20,90
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Mocha</h5>
-                            <p class="card-text truncar-3l">
-                                Chocolate com leite
-                                cremoso, café gourmet e
-                                chantilly.
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="#" class="btn btn-light disabled mt-2 d-block">
-                                <small>Reabastecendo
-                                    Estoque</small>
+                    <!-- Exemplo de um produto em destaque -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card text-center bg-light">
+                            <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
                             </a>
-                            <small class="text-danger">
-                                <b>Produto Esgotado</b>
-                            </small>
+                            <!-- Adiciona um ID único para cada imagem -->
+                            <a href="produto.html?id=1" onclick="exibirProduto('Café Especial Premium', 20.00, './img/000001.jpg', 'Café Expreeso gelado com leite condensado.')">
+                                <img src="./img/000001.jpg" class="card-img-top">
+                            </a>
+                            <div class="card-header">
+                                R$ 20,00
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Café Especial Premium</h5>
+                                <p class="card-text truncar-3l">
+                                    Café Expreeso gelado com leite condensado.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <button onclick="adicionarAoCarrinho('Café Especial Premium', 20.00, './img/000001.jpg', 'Café Expreeso gelado com leite condensado.')"
+                                    class="btn btn-danger mt-2 d-block">
+                                    Adicionar ao Carrinho
+                                </button>
+                                <small class="text-success">Em Destaque</small>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                    <div class="card text-center bg-light">
-                        <a href="#" class="position-absolute end-0 p-2 text-danger">
-                            <i class="bi-suit-heart-fill" style="font-size: 24px; line-height: 24px;"></i>
-                        </a>
-                        <img src="./img/000004.jpg" class="card-img-top">
-                        <div class="card-header">
-                            R$ 12,50
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Irish Coffee</h5>
-                            <p class="card-text truncar-3l">
-                                Café com o açúcar, uísque e creme de leite batido.
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <button onclick="adicionarAoCarrinho('Irish Coffee', 15.50, './img/000004.jpg')"
-                                class="btn btn-danger mt-2 d-block">
-                                Adicionar ao Carrinho
-                            </button>
-                            <small class="text-success">temos
-                                a pronta
-                                entrega</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                    <div class="card text-center bg-light">
-                        <a href="#" class="position-absolute end-0 p-2 text-danger">
-                            <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
-                        </a>
-                        <img src="./img/000005.jpg" class="card-img-top">
-                        <div class="card-header">
-                            R$ 15,50
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Café Cubano</h5>
-                            <p class="card-text truncar-3l">
-                                Café expresso, hortelã, suco de limão e cubos de gelo.
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <button onclick="adicionarAoCarrinho('Café Cubano', 15.50, './img/000005.jpg')"
-                                class="btn btn-danger mt-2 d-block">
-                                Adicionar ao Carrinho
-                            </button>
-                            <small class="text-success">temos
-                                a pronta
-                                entrega</small>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card text-center bg-light">
+                            <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                            </a>
+                            <!-- Adiciona um ID único para cada imagem -->
+                            <a href="produto.html?id=1" onclick="exibirProduto('Mont Blank', 12.90, './img/000002.jpg', ' Bebida batida com leite, gelo, essências e com opções com ou sem café.')">
+                                <img src="./img/000002.jpg" class="card-img-top">
+                            </a>
+                            <div class="card-header">
+                                R$ 12,90
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Mont Blank</h5>
+                                <p class="card-text truncar-3l">
+                                    Bebida batida com leite, gelo, essências e com opções com ou sem café.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <button onclick="adicionarAoCarrinho('Mont Blank', 12.90, './img/000002.jpg', ' Bebida batida com leite, gelo, essências e com opções com ou sem café.')"
+                                    class="btn btn-danger mt-2 d-block">
+                                    Adicionar ao Carrinho
+                                </button>
+                                <small class="text-success">Em Destaque</small>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                    <div class="card text-center bg-light">
-                        <a href="#" class="position-absolute end-0 p-2 text-danger">
-                            <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
-                        </a>
-                        <img src="./img/000006.jpg" class="card-img-top">
-                        <div class="card-header">
-                            R$ 18,00
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Caipirinha de Café</h5>
-                            <p class="card-text truncar-3l">
-                                Café expresso com Cachaça, Acuçar e gelo a gosto.
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <button onclick="adicionarAoCarrinho('Caipirinha de Café', 15.50, './img/000006.jpg')"
-                                class="btn btn-danger mt-2 d-block">
-                                Adicionar ao Carrinho
-                            </button>
-                            <small class="text-success">temos
-                                a pronta
-                                entrega</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                    <div class="card text-center bg-light">
-                        <a href="#" class="position-absolute end-0 p-2 text-danger">
-                            <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
-                        </a>
-                        <img src="./img/000007.jpg" class="card-img-top">
-                        <div class="card-header">
-                            R$ 20,00
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Coquetel de Café</h5>
-                            <p class="card-text truncar-3l">
-                                Café forte sem açúcar com leite condensado e gelo.
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <button onclick="adicionarAoCarrinho('Coquetel de Café', 15.50, './img/000007.jpg')"
-                                class="btn btn-danger mt-2 d-block">
-                                Adicionar ao Carrinho
-                            </button>
-                            <small class="text-success">temos
-                                a pronta
-                                entrega</small>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card text-center bg-light">
+                            <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                            </a>
+                            <!-- Adiciona um ID único para cada imagem -->
+                            <a href="produto.html?id=1" onclick="exibirProduto('Mocha', 22.90, './img/000003.jpg', 'Chocolate com leite cremoso, café gourmet e chantilly.')">
+                                <img src="./img/000003.jpg" class="card-img-top">
+                            </a>
+                            <div class="card-header">
+                                R$ 22,90
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Mocha</h5>
+                                <p class="card-text truncar-3l">
+                                    Chocolate com leite cremoso, café gourmet e chantilly.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <button onclick="adicionarAoCarrinho('Mocha', 22.90, './img/000003.jpg', 'Chocolate com leite cremoso, café gourmet e chantilly.')"
+                                    class="btn btn-danger mt-2 d-block">
+                                    Adicionar ao Carrinho
+                                </button>
+                                <small class="text-success">Em Destaque</small>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                    <div class="card text-center bg-light">
-                        <a href="#" class="position-absolute end-0 p-2 text-danger">
-                            <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
-                        </a>
-                        <img src="./img/000008.jpg" class="card-img-top">
-                        <div class="card-header">
-                            R$ 4,50
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Expresso Martini</h5>
-                            <p class="card-text truncar-3l">
-                                Café expresso com vodka, licor de café e cubos de gelo.
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <button onclick="adicionarAoCarrinho('Expresso Martini', 15.50, './img/000008.jpg')"
-                                class="btn btn-danger mt-2 d-block">
-                                Adicionar ao Carrinho
-                            </button>
-                            <small class="text-success">temos
-                                a pronta
-                                entrega</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                    <div class="card text-center bg-light">
-                        <a href="#" class="position-absolute end-0 p-2 text-danger">
-                            <i class="bi-suit-heart-fill" style="font-size: 24px; line-height: 24px;"></i>
-                        </a>
-                        <img src="./img/000009.jpg" class="card-img-top">
-                        <div class="card-header">
-                            R$ 6,50
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Cactus Café</h5>
-                            <p class="card-text truncar-3l">
-                                Licor de café com tequila prata, limão e cubos de gelo.
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <button onclick="adicionarAoCarrinho('Cactus Café', 15.50, './img/000009.jpg')"
-                                class="btn btn-danger mt-2 d-block">
-                                Adicionar ao Carrinho
-                            </button>
-                            <small class="text-success">temos
-                                a pronta
-                                entrega</small>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card text-center bg-light">
+                            <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                            </a>
+                            <!-- Adiciona um ID único para cada imagem -->
+                            <a href="produto.html?id=1" onclick="exibirProduto('Irish Coffee', 12.90, './img/000004.jpg', 'Café com ou sem açúcar, uísque e creme de leite batido.')">
+                                <img src="./img/000004.jpg" class="card-img-top">
+                            </a>
+                            <div class="card-header">
+                                R$ 12,90
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Irish Coffee</h5>
+                                <p class="card-text truncar-3l">
+                                    Café com ou sem açúcar, uísque e creme de leite batido.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <button onclick="adicionarAoCarrinho('Irish Coffee', 12.90, './img/000004.jpg', 'Café com ou sem açúcar, uísque e creme de leite batido.')"
+                                    class="btn btn-danger mt-2 d-block">
+                                    Adicionar ao Carrinho
+                                </button>
+                                <small class="text-success">Em Destaque</small>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                    <div class="card text-center bg-light">
-                        <a href="#" class="position-absolute end-0 p-2 text-danger">
-                            <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
-                        </a>
-                        <img src="./img/000010.jpg" class="card-img-top">
-                        <div class="card-header">
-                            R$ 7,50
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Iced
-                                Late Macchiato</h5>
-                            <p class="card-text truncar-3l">
-                                Leite frio e uma dose de
-                                Expresso.
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <button onclick="adicionarAoCarrinho('Iced Late Macchiato', 7.50, './img/000010.jpg')"
-                                class="btn btn-danger mt-2 d-block">
-                                Adicionar ao Carrinho
-                            </button>
-                            <small class="text-success">temos
-                                a pronta
-                                entrega</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                    <div class="card text-center bg-light">
-                        <a href="#" class="position-absolute end-0 p-2 text-danger">
-                            <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
-                        </a>
-                        <img src="./img/000011.jpg" class="card-img-top">
-                        <div class="card-header">
-                            R$ 11,50
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Expresso
-                                Collection</h5>
-                            <p class="card-text truncar-3l">
-                                Café Expreeso, sabores
-                                em Avelã e
-                                Brigadeiro.
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <button onclick="adicionarAoCarrinho('Expresso Collection', 11.50, './img/000011.jpg')"
-                                class="btn btn-danger mt-2 d-block">
-                                Adicionar ao Carrinho
-                            </button>
-                            <small class="text-success">temos
-                                a pronta
-                                entrega</small>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card text-center bg-light">
+                            <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                            </a>
+                            <!-- Adiciona um ID único para cada imagem -->
+                            <a href="produto.html?id=1" onclick="exibirProduto('Café Cubano', 15.90, './img/000005.jpg', 'Café com ou sem açúcar, uísque e creme de leite batido.')">
+                                <img src="./img/000005.jpg" class="card-img-top">
+                            </a>
+                            <div class="card-header">
+                                R$ 15,90
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Café Cubano</h5>
+                                <p class="card-text truncar-3l">
+                                    Café com ou sem açúcar, uísque e creme de leite batido.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <button onclick="adicionarAoCarrinho('Café Cubano', 15.90, './img/000005.jpg', 'Café com ou sem açúcar, uísque e creme de leite batido.')"
+                                    class="btn btn-danger mt-2 d-block">
+                                    Adicionar ao Carrinho
+                                </button>
+                                <small class="text-success">Em Destaque</small>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                    <div class="card text-center bg-light">
-                        <a href="#" class="position-absolute end-0 p-2 text-danger">
-                            <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
-                        </a>
-                        <img src="./img/000012.jpg" class="card-img-top">
-                        <div class="card-header">
-                            R$ 9,50
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Chocolate Clássico</h5>
-                            <p class="card-text truncar-3l">
-                                Café de Chocolate cremoso com cacau e chocolate ralado.
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <button onclick="adicionarAoCarrinho('Chocolate Clássico', 9.50, './img/000012.jpg')"
-                                class="btn btn-danger mt-2 d-block">
-                                Adicionar ao Carrinho
-                            </button>
-                            <small class="text-success">temos
-                                a pronta
-                                entrega</small>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card text-center bg-light">
+                            <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                            </a>
+                            <!-- Adiciona um ID único para cada imagem -->
+                            <a href="produto.html?id=1" onclick="exibirProduto('Caipirinha de Café', 15.90, './img/000006.jpg', 'Café expresso com cachaça, acuçar e gelo a gosto.')">
+                                <img src="./img/000006.jpg" class="card-img-top">
+                            </a>
+                            <div class="card-header">
+                                R$ 15,90
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Caipirinha de Café</h5>
+                                <p class="card-text truncar-3l">
+                                    Café expresso com cachaça, acuçar e gelo a gosto.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <button onclick="adicionarAoCarrinho('Caipirinha de Café', 15.90, './img/000006.jpg', 'Café expresso com cachaça, acuçar e gelo a gosto.')"
+                                    class="btn btn-danger mt-2 d-block">
+                                    Adicionar ao Carrinho
+                                </button>
+                                <small class="text-success">Em Destaque</small>
+                            </div>
                         </div>
                     </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card text-center bg-light">
+                            <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                            </a>
+                            <!-- Adiciona um ID único para cada imagem -->
+                            <a href="produto.html?id=1" onclick="exibirProduto('Coquetel de Café', 20.00, './img/000007.jpg', 'Café forte sem açúcar com leite condensado e gelo.')">
+                                <img src="./img/000007.jpg" class="card-img-top">
+                            </a>
+                            <div class="card-header">
+                                R$ 20,00
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Coquetel de Café</h5>
+                                <p class="card-text truncar-3l">
+                                    Café forte sem açúcar com leite condensado e gelo.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <button onclick="adicionarAoCarrinho('Coquetel de Café', 20.00, './img/000007.jpg', 'Café forte sem açúcar com leite condensado e gelo.')"
+                                    class="btn btn-danger mt-2 d-block">
+                                    Adicionar ao Carrinho
+                                </button>
+                                <small class="text-success">Em Destaque</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card text-center bg-light">
+                            <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                            </a>
+                            <!-- Adiciona um ID único para cada imagem -->
+                            <a href="produto.html?id=1" onclick="exibirProduto('Expresso Martini', 18.00, './img/000008.jpg', 'Café forte sem açúcar com leite condensado e gelo.')">
+                                <img src="./img/000008.jpg" class="card-img-top">
+                            </a>
+                            <div class="card-header">
+                                R$ 18,00
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Expresso Martini</h5>
+                                <p class="card-text truncar-3l">
+                                    Café forte sem açúcar com leite condensado e gelo.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <button onclick="adicionarAoCarrinho('Expresso Martini', 18.00, './img/000008.jpg', 'Café forte sem açúcar com leite condensado e gelo.')"
+                                    class="btn btn-danger mt-2 d-block">
+                                    Adicionar ao Carrinho
+                                </button>
+                                <small class="text-success">Em Destaque</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card text-center bg-light">
+                            <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                            </a>
+                            <!-- Adiciona um ID único para cada imagem -->
+                            <a href="produto.html?id=1" onclick="exibirProduto('Cactus Café', 16.50, './img/000009.jpg', 'Licor de café com tequila prata, limão e cubos de gelo.')">
+                                <img src="./img/000009.jpg" class="card-img-top">
+                            </a>
+                            <div class="card-header">
+                                R$ 16,50
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Cactus Café</h5>
+                                <p class="card-text truncar-3l">
+                                    Licor de café com tequila prata, limão e cubos de gelo.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <button onclick="adicionarAoCarrinho('Cactus Café', 16.50, './img/000009.jpg', 'Licor de café com tequila prata, limão e cubos de gelo.')"
+                                    class="btn btn-danger mt-2 d-block">
+                                    Adicionar ao Carrinho
+                                </button>
+                                <small class="text-success">Em Destaque</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card text-center bg-light">
+                            <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                            </a>
+                            <!-- Adiciona um ID único para cada imagem -->
+                            <a href="produto.html?id=1" onclick="exibirProduto('Iced Late Macchiato', 11.50, './img/000010.jpg', 'Leite frio e uma dose de café expresso.')">
+                                <img src="./img/000010.jpg" class="card-img-top">
+                            </a>
+                            <div class="card-header">
+                                R$ 16,50
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Iced Late Macchiato</h5>
+                                <p class="card-text truncar-3l">
+                                    Leite frio e uma dose de café expresso.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <button onclick="adicionarAoCarrinho('Iced Late Macchiato', 11.50, './img/000010.jpg', 'Leite frio e uma dose de café expresso.')"
+                                    class="btn btn-danger mt-2 d-block">
+                                    Adicionar ao Carrinho
+                                </button>
+                                <small class="text-success">Em Destaque</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card text-center bg-light">
+                            <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                            </a>
+                            <!-- Adiciona um ID único para cada imagem -->
+                            <a href="produto.html?id=1" onclick="exibirProduto('Expresso Collection', 21.50, './img/000011.jpg', 'Leite frio e uma dose de café expresso.')">
+                                <img src="./img/000011.jpg" class="card-img-top">
+                            </a>
+                            <div class="card-header">
+                                R$ 21,50
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Expresso Collection</h5>
+                                <p class="card-text truncar-3l">
+                                    Leite frio e uma dose de café expresso.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <button onclick="adicionarAoCarrinho('Expresso Collection', 21.50, './img/000011.jpg', 'Leite frio e uma dose de café expresso.')"
+                                    class="btn btn-danger mt-2 d-block">
+                                    Adicionar ao Carrinho
+                                </button>
+                                <small class="text-success">Em Destaque</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card text-center bg-light">
+                            <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                            </a>
+                            <!-- Adiciona um ID único para cada imagem -->
+                            <a href="produto.html?id=1" onclick="exibirProduto('Chocolate Clássico', 19.50, './img/000012.jpg', 'Café de Chocolate cremoso com cacau e chocolate ralado.')">
+                                <img src="./img/000012.jpg" class="card-img-top">
+                            </a>
+                            <div class="card-header">
+                                R$ 19,50
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Chocolate Clássico</h5>
+                                <p class="card-text truncar-3l">
+                                    Café de Chocolate cremoso com cacau e chocolate ralado.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <button onclick="adicionarAoCarrinho('Chocolate Clássico', 19.50, './img/000012.jpg', 'Café de Chocolate cremoso com cacau e chocolate ralado.')"
+                                    class="btn btn-danger mt-2 d-block">
+                                    Adicionar ao Carrinho
+                                </button>
+                                <small class="text-success">Em Destaque</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card text-center bg-light">
+                            <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                            </a>
+                            <!-- Adiciona um ID único para cada imagem -->
+                            <a href="produto.html?id=1" onclick="exibirProduto('Trio Coffe', 22.50, './img/000013.jpg', 'Café de Chocolate cremoso com cacau e chocolate ralado.')">
+                                <img src="./img/000013.jpg" class="card-img-top">
+                            </a>
+                            <div class="card-header">
+                                R$ 22,50
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Trio Coffe</h5>
+                                <p class="card-text truncar-3l">
+                                    Café de Chocolate cremoso com cacau e chocolate ralado.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <button onclick="adicionarAoCarrinho('Trio Coffe', 22.50, './img/000013.jpg', 'Café de Chocolate cremoso com cacau e chocolate ralado.')"
+                                    class="btn btn-danger mt-2 d-block">
+                                    Adicionar ao Carrinho
+                                </button>
+                                <small class="text-success">Em Destaque</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card text-center bg-light">
+                            <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                            </a>
+                            <!-- Adiciona um ID único para cada imagem -->
+                            <a href="produto.html?id=1" onclick="exibirProduto('Café Expresso Cortado', 19.00, './img/000014.jpg', 'Café expresso espanhol com leite sem açucar')">
+                                <img src="./img/000014.jpg" class="card-img-top">
+                            </a>
+                            <div class="card-header">
+                                R$ 19,00
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Café Expresso Cortado</h5>
+                                <p class="card-text truncar-3l">
+                                    Café expresso espanhol com leite sem açucar.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <button onclick="adicionarAoCarrinho('Café Expresso Cortado', 19.00, './img/000014.jpg', 'Café expresso espanhol com leite sem açucar')"
+                                    class="btn btn-danger mt-2 d-block">
+                                    Adicionar ao Carrinho
+                                </button>
+                                <small class="text-success">Em Destaque</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card text-center bg-light">
+                            <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                            </a>
+                            <!-- Adiciona um ID único para cada imagem -->
+                            <a href="produto.html?id=1" onclick="exibirProduto('Café latte ao chantilly', 23.50, './img/000015.jpg', 'Café com leite cremoso e chantilly.')">
+                                <img src="./img/000015.jpg" class="card-img-top">
+                            </a>
+                            <div class="card-header">
+                                R$ 23,50
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Café latte ao chantilly</h5>
+                                <p class="card-text truncar-3l">
+                                    Café com leite cremoso e chantilly..
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <button onclick="adicionarAoCarrinho('Café latte ao chantilly', 23.50, './img/000015.jpg', 'Café com leite cremoso e chantilly.')"
+                                    class="btn btn-danger mt-2 d-block">
+                                    Adicionar ao Carrinho
+                                </button>
+                                <small class="text-success">Em Destaque</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card text-center bg-light">
+                            <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                            </a>
+                            <!-- Adiciona um ID único para cada imagem -->
+                            <a href="produto.html?id=1" onclick="exibirProduto('CAFÉ VIENENSE', 17.50, './img/000016.jpg', 'Café expresso delicioso com chantilly e raspas de laranja.')">
+                                <img src="./img/000016.jpg" class="card-img-top">
+                            </a>
+                            <div class="card-header">
+                                R$ 17,50
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">CAFÉ VIENENSE</h5>
+                                <p class="card-text truncar-3l">
+                                    Café expresso delicioso com chantilly e raspas de laranja.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <button onclick="adicionarAoCarrinho('CAFÉ VIENENSE', 17.50, './img/000016.jpg', 'Café expresso delicioso com chantilly e raspas de laranja.')"
+                                    class="btn btn-danger mt-2 d-block">
+                                    Adicionar ao Carrinho
+                                </button>
+                                <small class="text-success">Em Destaque</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card text-center bg-light">
+                            <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                            </a>
+                            <!-- Adiciona um ID único para cada imagem -->
+                            <a href="produto.html?id=1" onclick="exibirProduto('Café Paçoquinha', 20.50, './img/000017.jpg', 'Café Espresso com leite cremoso, paçoca e chantilly.')">
+                                <img src="./img/000017.jpg" class="card-img-top">
+                            </a>
+                            <div class="card-header">
+                                R$ 20,50
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Café Paçoquinha</h5>
+                                <p class="card-text truncar-3l">
+                                    Café Espresso com leite cremoso, paçoca e chantilly.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <button onclick="adicionarAoCarrinho('Café Paçoquinha', 20.50, './img/000017.jpg', 'Café Espresso com leite cremoso, paçoca e chantilly.')"
+                                    class="btn btn-danger mt-2 d-block">
+                                    Adicionar ao Carrinho
+                                </button>
+                                <small class="text-success">Em Destaque</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card text-center bg-light">
+                            <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                            </a>
+                            <!-- Adiciona um ID único para cada imagem -->
+                            <a href="produto.html?id=1" onclick="exibirProduto('Bonbon Café', 23.50, './img/000018.jpg', 'Café Nespreeso com camadas de chocolate e leite.')">
+                                <img src="./img/000018.jpg" class="card-img-top">
+                            </a>
+                            <div class="card-header">
+                                R$ 23,50
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Bonbon Café</h5>
+                                <p class="card-text truncar-3l">
+                                    Café Nespreeso com camadas de chocolate e leite.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <button onclick="adicionarAoCarrinho('Bonbon Café', 23.50, './img/000018.jpg', 'Café Nespreeso com camadas de chocolate e leite.')"
+                                    class="btn btn-danger mt-2 d-block">
+                                    Adicionar ao Carrinho
+                                </button>
+                                <small class="text-success">Em Destaque</small>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Adicione mais blocos de código para outros produtos em destaque conforme necessário -->
+
                 </div>
+                <!-- Fim da Seção de Produtos em Destaque -->
+
+                <hr class="mt-3">
+
+                <!-- ... (código existente) ... -->
             </div>
     </main>
 
@@ -452,8 +622,19 @@
     <h2 id="greet"></h2>
 
     <script>
-        // Função para adicionar um produto ao carrinho
-        function adicionarAoCarrinho(nomeProduto, precoProduto, imagemProduto) {
+        window.onload = function() {
+            atualizarIconeCarrinho();
+
+            // Adicione o ouvinte de evento do botão Sair aqui
+            document.getElementById('btnSair').addEventListener('click', function() {
+                // Limpar o carrinho ao clicar em "Sair"
+                limparCarrinho();
+            });
+        };
+        
+            // Função para adicionar um produto ao carrinho
+            function adicionarAoCarrinho(nomeProduto, precoProduto, imagemProduto) {
+
             // Verifique se há uma lista de carrinho no armazenamento local
             let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
@@ -487,9 +668,34 @@
                 badge.innerText = carrinho.length;
             }
         }
-        window.onload = atualizarIconeCarrinho;
 
-    </script>
+            // Adicione a função para exibir o produto
+            function exibirProduto(nomeProduto, precoProduto, imagemProduto, descricaoProduto) {
+                // Armazene os detalhes do produto na sessão local
+                sessionStorage.setItem('produtoDetalhe', JSON.stringify({
+                    nome: nomeProduto,
+                    preco: precoProduto,
+                    imagem: imagemProduto,
+                    descricao: descricaoProduto,
+                }));
+            }
+
+      
+        function limparCarrinho() {
+          // Limpar os dados do carrinho (substitua isso pelo código real do Firebase)
+          // Exemplo: localStorage.removeItem('carrinho'); // se você estiver usando localStorage
+          // ou faça a chamada para a função do Firebase que remove os itens do carrinho
+         // Limpar os dados do carrinho associados ao usuário atual
+            localStorage.removeItem('carrinho');
+          // Atualizar o contador do carrinho para 0
+          atualizarContadorCarrinho(0);
+        }
+      
+        function atualizarContadorCarrinho(quantidade) {
+          // Atualizar o contador do carrinho na interface
+          document.getElementById('contadorCarrinho').innerHTML = '<small>' + quantidade + '</small>';
+        }
+      </script>
 
     <div>
         <footer class="border-top text-muted bg-light">

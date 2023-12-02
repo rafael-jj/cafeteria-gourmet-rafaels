@@ -45,7 +45,7 @@
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="home.html">Principal</a>
+                            <a class="nav-link text-white" href="home.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="contato.html">Contato</a>
@@ -74,7 +74,8 @@
                 <h1>Obrigado!</h1>
                 <hr>
                 <h3>Anote o número de seu pedido:</h3>
-                <h2 class="text-danger"><b>004571</b></h2>
+                <!-- Adicione um elemento com um ID para exibir o número do pedido -->
+                <h2 class="text-danger" id="numeroPedido"></h2>
                 <p>Em até 2 horas, seu pedido será entregue. Qualquer dúvida
                     sobre este pedido, entre em contato conosco e informe o
                     número do pedido para que possamos te ajudar.</p>
@@ -85,16 +86,43 @@
                 </p>
                 <p>
                     <a href="home.html" class="btn btn-danger btn-lg">Voltar
-                        à Página Principal</a>
+                        à Página Home</a>
                 </p>
             </div>
         </main>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Verifique se há um contador salvo no localStorage
+                let contadorPedido = localStorage.getItem("contadorPedido");
+        
+                // Se não houver contador, defina-o como 1
+                if (!contadorPedido) {
+                    contadorPedido = 1;
+                }
+        
+                // Exiba o número do pedido na página
+                document.getElementById("numeroPedido").textContent = pad(contadorPedido, 6);
+        
+                // Incremente o contador e salve no localStorage
+                contadorPedido++;
+                localStorage.setItem("contadorPedido", contadorPedido);
+            });
+        
+            // Função para preencher zeros à esquerda
+            function pad(number, length) {
+                let str = '' + number;
+                while (str.length < length) {
+                    str = '0' + str;
+                }
+                return str;
+            }
+        </script>
 
         <footer class="border-top text-muted bg-light">
             <div class="container">
                 <div class="row py-3">
                     <div class="col-12 col-md-4 text-center">
-                        &copy; 2023 - Cafeteria Gourmet Sene Ltda ME<br>
+                        &copy; 2023-Cafeteria Gourmet Rafaels Ltda ME<br>
                         Rua Virtual Inexistente, 171, Compulândia/PC <br>
                         CPNJ 99.999.999/0001-99
                     </div>

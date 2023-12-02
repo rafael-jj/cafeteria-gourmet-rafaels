@@ -53,7 +53,7 @@
                     <div class="align-self-end">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="index.html" class="nav-link text-white">Sair</a>
+                                <a href="index.html" class="nav-link text-white" id="btnSair">Sair</a>
                             </li>
                             <li class="nav-item">
                                 <span id="contadorCarrinho"
@@ -196,6 +196,11 @@
                 // Chama a função para atualizar o ícone do carrinho
                 atualizarIconeCarrinho();
             });
+                    // Adicione o evento de clique para o botão "Sair"
+                    document.getElementById('btnSair').addEventListener('click', function() {
+                        // Limpar o carrinho ao clicar em "Sair"
+                        limparCarrinho();
+                    });
         </script>
 
         <footer class="border-top text-muted bg-light">

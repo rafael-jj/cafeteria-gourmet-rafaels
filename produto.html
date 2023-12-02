@@ -46,7 +46,7 @@
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="home.html">Principal</a>
+                            <a class="nav-link text-white" href="home.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="contato.html">Contato</a>
@@ -58,8 +58,6 @@
                                 <a href="index.html" class="nav-link text-white">Sair</a>
                             </li>
                             <li class="nav-item">
-                                <span class="badge rounded-pill bg-light text-danger position-absolute ms-4 mt-0"
-                                    title=" produto(s) no carrinho"><small></small></span>
                                 <a href="carrinho.html" class="nav-link text-white">
                                     <i class="fas fa-shopping-cart" style="font-size: 24px; line-height: 24px;"></i>
                                 </a>
@@ -74,100 +72,118 @@
             <div class="container">
                 <div class="row g-3">
                     <div class="col-12 col-sm-6">
-                        <img src="./img/000001.jpg" class="img-thumbnail" id="imgProduto">
-                        <br class="clearfix">
-                        <div class="row my-3 gx-3">
-                            <div class="col-3">
-                                <img src="./img/000001.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
-                            </div>
-                            <div class="col-3">
-                                <img src="./img/000002.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
-                            </div>
-                            <div class="col-3">
-                                <img src="./img/000003.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
-                            </div>
-                            <div class="col-3">
-                                <img src="./img/000004.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
-                            </div>
-                        </div>
+                        <img src="" class="img-thumbnail" id="imgProduto">
+                        <!-- Adicione mais elementos conforme necessário para outras informações do produto -->
                     </div>
                     <div class="col-12 col-sm-6">
-                        <h1>PRODUTOS AINDA NAO ADD</h1>
-                        <p>
-                            Quis officia irure deserunt reprehenderit sunt
-                            non ut amet. Sunt veniam cillum aliqua. Elit
-                            labore duis laboris reprehenderit laborum magna
-                            velit dolor veniam sint.
+                        <h1 id="nomeProduto">Produto</h1>
+                        <!-- Adicione mais elementos conforme necessário para outras informações do produto -->
+                        <p id="descricaoProduto" class="texto-grande">
                         </p>
                         <p>
-                            Do ut ad quis et qui qui tempor do irure laborum
-                            ullamco excepteur. Adipisicing ipsum ad
-                            excepteur sit ipsum adipisicing. Ut ut elit
-                            proident fugiat. Ad deserunt et consequat
-                            aliquip nisi ut dolore sit ut veniam fugiat
-                            culpa nulla. Consequat eiusmod ad deserunt ad
-                            sunt adipisicing deserunt nulla est cupidatat
-                            commodo do. Minim aliquip dolor in deserunt
-                            elit officia. Anim duis ullamco cillum nulla
-                            voluptate dolore velit ad Lorem adipisicing.
+                            Cafeteria Gourmet Rafaels a melhor do Vale do Paraiba e Região.
                         </p>
                         <p>
-                            <button class="btn btn-lg btn-danger mb-3 mb-xl-0 me-2">
-                                <i class="bi-cart"></i> Adicionar ao
-                                Carrinho
-                            </button>
-                            <button class="btn btn-lg btn-outline-danger">
-                                <i class="bi-heart"></i> Adicionar aos
-                                Favoritos
+                            <button onclick="adicionarAoCarrinho()"
+                                class="btn btn-lg btn-danger mb-3 mb-xl-0 me-2">
+                                <i class="bi-cart"></i> <a class="nav-link text-white" href="home.html">Coffe Shop Menu</a>                                    
+                                </li>
                             </button>
                         </p>
                     </div>
                 </div>
             </div>
         </main>
+    </div>
 
-        <footer class="border-top text-muted bg-light">
-            <div class="container">
-                <div class="row py-3">
-                    <div class="col-12 col-md-4 text-center">
-                        &copy; 2023 - Cafeteria Gourmet Sene Ltda ME<br>
-                        Rua Virtual Inexistente, 171, Compulândia/PC <br>
-                        CPNJ 99.999.999/0001-99
-                    </div>
-                    <div class="col-12 col-md-4 text-center">
-                        <a href="privacidade.html" class="text-decoration-none text-dark">
-                            Política de Privacidade
-                        </a><br>
-                        <a href="termos.html" class="text-decoration-none text-dark">
-                            Termos de Uso
-                        </a><br>
-                        <a href="quemsomos.html" class="text-decoration-none text-dark">
-                            Quem Somos
-                        </a><br>
-                        <a href="trocas.html" class="text-decoration-none text-dark">
-                            Trocas e Devoluções
-                        </a>
-                    </div>
-                    <div class="col-12 col-md-4 text-center">
-                        <a href="contato.html" class="text-decoration-none text-dark">
-                            Contato pelo Site
-                        </a><br>
-                        E-mail: <a href="mailto:email@dominio.com" class="text-decoration-none text-dark">
-                            email@dominio.com
-                        </a><br>
-                        Telefone: <a href="phone:28999990000" class="text-decoration-none text-dark">
-                            (28) 99999-0000
-                        </a>
-                    </div>
+    <footer class="border-top text-muted bg-light">
+        <div class="container">
+            <div class="row py-3">
+                <div class="col-12 col-md-4 text-center">
+                    &copy; 2023 - Cafeteria Gourmet Rafaels Ltda ME<br>
+                    Rua Virtual Inexistente, 171, Compulândia/PC <br>
+                    CPNJ 99.999.999/0001-99
+                </div>
+                <div class="col-12 col-md-4 text-center">
+                    <a href="privacidade.html" class="text-decoration-none text-dark">
+                        Política de Privacidade
+                    </a><br>
+                    <a href="termos.html" class="text-decoration-none text-dark">
+                        Termos de Uso
+                    </a><br>
+                    <a href="quemsomos.html" class="text-decoration-none text-dark">
+                        Quem Somos
+                    </a><br>
+                    <a href="trocas.html" class="text-decoration-none text-dark">
+                        Trocas e Devoluções
+                    </a>
+                </div>
+                <div class="col-12 col-md-4 text-center">
+                    <a href="contato.html" class="text-decoration-none text-dark">
+                        Contato pelo Site
+                    </a><br>
+                    E-mail: <a href="mailto:email@dominio.com" class="text-decoration-none text-dark">
+                        email@dominio.com
+                    </a><br>
+                    Telefone: <a href="phone:28999990000" class="text-decoration-none text-dark">
+                        (28) 99999-0000
+                    </a>
                 </div>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
+
     <script>
-        function trocarImagem(el) {
-            var imgProduto = document.getElementById("imgProduto");
-            imgProduto.src = el.src;
+        // Função para obter parâmetros da URL
+        function obterParametroDaUrl(nomeParametro) {
+            const parametros = new URLSearchParams(window.location.search);
+            return parametros.get(nomeParametro);
         }
+
+        // Função para exibir detalhes do produto
+        function exibirDetalhesDoProduto() {
+            const nomeProduto = obterParametroDaUrl("produto");
+
+            // Verifica se o nome do produto não é nulo
+            if (nomeProduto !== null) {
+                console.log("Nome do produto:", nomeProduto);
+
+                const produtos = {
+                    // Adicione produtos conforme necessário
+                };
+
+                if (produtos[nomeProduto]) {
+                    const produto = produtos[nomeProduto];
+
+                    document.getElementById("imgProduto").src = produto.imagem;
+                    document.getElementById("nomeProduto").innerText = produto.nome;
+                    document.getElementById("descricaoProduto").innerText = produto.descricao;
+                    document.getElementById("precoProduto").innerText = `R$ ${produto.preco.toFixed(2)}`;
+                } else {
+                    console.error(`Produto "${nomeProduto}" não encontrado.`);
+                }
+            }
+        }
+  
+                // Espera pelo carregamento completo da página antes de chamar a função
+                window.onload = () => {
+                    exibirDetalhesDoProduto();
+
+                    // Verifique se há detalhes do produto armazenados na sessionStorage
+                    const produtoDetalhe = sessionStorage.getItem('produtoDetalhe');
+                    if (produtoDetalhe) {
+                        const { nome, preco, imagem, descricao } = JSON.parse(produtoDetalhe);
+
+                        // Exiba os detalhes do produto da sessionStorage
+                        document.getElementById("imgProduto").src = imagem;
+                        document.getElementById("nomeProduto").innerText = nome;
+                        document.getElementById("descricaoProduto").innerText = descricao;
+                        document.getElementById("precoProduto").innerText = preco;
+
+                        // Limpe os detalhes do produto da sessionStorage após exibi-los
+                        sessionStorage.removeItem('produtoDetalhe');
+                    }
+                };
     </script>
 </body>
 
