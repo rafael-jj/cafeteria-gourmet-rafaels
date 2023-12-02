@@ -57,8 +57,6 @@
                                 <a href="index.html" class="nav-link text-white">Sair</a>
                             </li>
                             <li class="nav-item">
-                                <span class="badge rounded-pill bg-light text-danger position-absolute ms-4 mt-0"
-                                    title="produto(s) no carrinho"><small></small></span>
                                 <a href="carrinho.html" class="nav-link text-white">
                                     <i class="fas fa-shopping-cart" style="font-size: 24px; line-height: 24px;"></i>
                                 </a>
@@ -69,13 +67,44 @@
             </div>
         </nav>
 
+        <!-- ... (seu código existente) -->
+
         <main class="flex-fill">
             <div class="container text-center">
-                <h1>Obrigado!</h1>
+                <h1>Obrigado pela preferência!</h1>
                 <hr>
                 <h3>Anote o número de seu pedido:</h3>
                 <!-- Adicione um elemento com um ID para exibir o número do pedido -->
                 <h2 class="text-danger" id="numeroPedido"></h2>
+        
+                <!-- Exibir o endereço do cliente -->
+                <h4 id="enderecoCliente"></h4>
+        
+                <!-- Exibir a forma de pagamento -->
+                <h4 id="formaPagamento"></h4>
+        
+                <!-- Adicione a tabela de itens do pedido -->
+                <h3>Itens do Pedido:</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Quantidade</th>
+                            <th>Preço Unitário</th>
+                            <th>Total Item</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaItensPedido">
+                        <!-- O conteúdo será dinamicamente adicionado aqui pelo JavaScript -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" class="text-end">Total da Compra:</td>
+                            <td id="totalCompraTabela"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+        
                 <p>Em até 2 horas, seu pedido será entregue. Qualquer dúvida
                     sobre este pedido, entre em contato conosco e informe o
                     número do pedido para que possamos te ajudar.</p>
@@ -90,33 +119,108 @@
                 </p>
             </div>
         </main>
+        
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 // Verifique se há um contador salvo no localStorage
                 let contadorPedido = localStorage.getItem("contadorPedido");
-        
+
                 // Se não houver contador, defina-o como 1
                 if (!contadorPedido) {
                     contadorPedido = 1;
                 }
-        
+
+                // Recupere a forma de pagamento do localStorage
+                const formaPagamento = localStorage.getItem("formaPagamento");
+
+                // Exiba a forma de pagamento na página
+                if (formaPagamento) {
+                    document.getElementById("formaPagamento").textContent = `Forma de Pagamento: ${formaPagamento}`;
+                }
+
                 // Exiba o número do pedido na página
                 document.getElementById("numeroPedido").textContent = pad(contadorPedido, 6);
-        
+
+                // Recupere o endereço do cliente do localStorage
+                const enderecoCliente = localStorage.getItem("enderecoCliente");
+
+                // Exiba o endereço do cliente na página
+                if (enderecoCliente) {
+                    document.getElementById("enderecoCliente").textContent = `Endereço: ${enderecoCliente}`;
+                }
+
+                // Renderize os itens do pedido
+                renderizarItensPedido();
+
                 // Incremente o contador e salve no localStorage
                 contadorPedido++;
                 localStorage.setItem("contadorPedido", contadorPedido);
+                // Adicione um evento de clique ao botão "Voltar à Página Home"
+                const btnVoltarHome = document.querySelector('.btn-voltar-home');
+                btnVoltarHome.addEventListener('click', voltarParaHome);
             });
+
+                // Função para voltar à página home
+                function voltarParaHome() {
+                    // Adicione a lógica para voltar à página home, se necessário
+                    window.location.href = 'home.html';
+                }
         
             // Função para preencher zeros à esquerda
             function pad(number, length) {
-                let str = '' + number;
+                let str = "" + number;
                 while (str.length < length) {
-                    str = '0' + str;
+                    str = "0" + str;
                 }
                 return str;
             }
+        
+            // Função para obter a lista de produtos do carrinho do armazenamento local
+            function obterCarrinho() {
+                return JSON.parse(localStorage.getItem('carrinho')) || [];
+            }
+        
+            // Função para calcular o valor total unitário de um produto
+            function calcularTotalUnitario(produto) {
+                return produto.quantidade * produto.preco;
+            }
+        
+            // Função para renderizar os itens do pedido
+            function renderizarItensPedido() {
+                const carrinho = obterCarrinho();
+                const tabelaItensPedido = document.getElementById('tabelaItensPedido');
+                const totalCompraTabela = document.getElementById('totalCompraTabela');
+        
+                // Limpa a tabela antes de renderizar novamente
+                tabelaItensPedido.innerHTML = '';
+        
+                if (carrinho.length === 0) {
+                    tabelaItensPedido.innerHTML = '<tr><td colspan="4">Nenhum item no carrinho</td></tr>';
+                    totalCompraTabela.innerText = '0.00';
+                } else {
+                    let totalCompra = 0;
+        
+                    carrinho.forEach(produto => {
+                        const totalItem = calcularTotalUnitario(produto);
+                        totalCompra += totalItem;
+        
+                        const linhaHTML = `
+                                        <tr>
+                                            <td>${produto.nome}</td>
+                                            <td>${produto.quantidade}</td>
+                                            <td>R$ ${produto.preco.toFixed(2)}</td>
+                                            <td>R$ ${totalItem.toFixed(2)}</td>
+                                        </tr>
+                                    `;
+        
+                        tabelaItensPedido.innerHTML += linhaHTML;
+                    });
+        
+                    totalCompraTabela.innerText = totalCompra.toFixed(2);
+                }
+            }
         </script>
+
 
         <footer class="border-top text-muted bg-light">
             <div class="container">

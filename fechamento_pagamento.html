@@ -105,7 +105,7 @@
                                 <div class="form-floating mb-3">
                                     <input type="text" id="txtCodigo" class="form-control" placeholder=" ">
                                     <label for="txtCodigo" class="text-black-50">Código de
-                                        Segurança</label>
+                                        Segurança(xxx)</label>
                                 </div>
 
                                 <div class="form-floating">
@@ -154,7 +154,8 @@
                     <a href="fechamento_endereco.html" class="btn btn-outline-success btn-lg mb-4">
                         Voltar aos Endereços
                     </a>
-                    <a href="fechamento_pedido.html" class="btn btn-danger btn-lg ms-2 mb-4">Finalizar</a>
+                    <!-- Adicione um ID ao botão "Finalizar" -->
+                    <a id="btnFinalizar" href="#" class="btn btn-danger btn-lg ms-2 mb-4">Finalizar</a>
                 </div>
             </div>
         </main>
@@ -162,11 +163,49 @@
         <script>
             document.addEventListener('DOMContentLoaded', function () {
                 const totalCarrinhoElement = document.getElementById('totalCarrinho');
-    
+        
                 // Atualiza o valor total do carrinho quando a página carrega
                 totalCarrinhoElement.innerText = `R$ ${atualizarIconeCarrinho()}`;
             });
-    
+        
+            // Adicione um evento de clique ao botão "Finalizar"
+            const btnFinalizar = document.getElementById('btnFinalizar');
+            btnFinalizar.addEventListener('click', finalizarPedido);
+        
+            // Função para finalizar o pedido
+            function finalizarPedido() {
+                // Obtenha a forma de pagamento selecionada
+                const formaPagamentoSelecionada = obterFormaPagamentoSelecionada();
+        
+                // Verifique se uma forma de pagamento foi selecionada
+                if (!formaPagamentoSelecionada) {
+                    // Se nenhuma forma de pagamento estiver selecionada, exiba uma mensagem de alerta
+                    alert('Por favor, selecione uma forma de pagamento.');
+                    return;
+                }
+        
+                // Salve a forma de pagamento no localStorage
+                localStorage.setItem('formaPagamento', formaPagamentoSelecionada);
+        
+                // Redirecione para a página de fechamento_pedido.html
+                window.location.href = 'fechamento_pedido.html';
+            }
+        
+            // Função para obter a forma de pagamento selecionada
+            function obterFormaPagamentoSelecionada() {
+                const radioPag1 = document.getElementById('pag1');
+                const radioPag2 = document.getElementById('pag2');
+        
+                if (radioPag1.checked) {
+                    return 'Cartão de Crédito';
+                } else if (radioPag2.checked) {
+                    return 'Dinheiro';
+                }
+        
+                // Se nenhum estiver selecionado, retorne vazio ou uma opção padrão
+                return '';
+            }
+        
             // Função para atualizar o ícone do carrinho
             function atualizarIconeCarrinho() {
                 const carrinho = obterCarrinho();

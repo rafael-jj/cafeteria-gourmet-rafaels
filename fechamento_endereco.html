@@ -70,101 +70,61 @@
 
         <main class="flex-fill">
             <div class="container">
-                <h1>Selecione o Endereço de Entrega</h1>
+                <h1>Endereço de Entrega</h1>
+                <p>
+
+                </p>
                 <h3 class="mb-4">
-                    Selecione o endereço de entrega e clique em <b>Continuar</b>
-                    para prosseguir para a <b>seleção da
+                    Por favor insira seu o endereço de entrega com um ponto de referencia e clique em <b>Continuar</b>
+                    para prosseguirmos para a <b>seleção da
                         forma de pagamento</b>.
+
                 </h3>
-                <div class="d-flex justify-content-around flex-wrap border rounded-top pt-4 px-3">
-                    <div class="mb-4 mx-2 flex-even">
-                        <input type="radio" class="btn-check" name="endereco" autocomplete="off" id="end1">
-                        <label class="btn btn-outline-danger p-4 h-100 w-100" for="end1">
-                            <h3>
-                                <b class="text-dark">Minha Casa</b><br>
-                                <hr>
-                                <b>Cliente-xxxx</b><br>
-                                Rua Virtual, 105<br>
-                                Compulândia/PC<br>
-                                CEP 01.010-101
-                            </h3>
-                        </label>
-                    </div>
-                    <div class="mb-4 mx-2 flex-even">
-                        <input type="radio" class="btn-check" name="endereco" autocomplete="off" id="end2">
-                        <label class="btn btn-outline-danger p-4 h-100 w-100" for="end2">
-                            <h3>
-                                <b class="text-dark">Meu Trabalho</b><br>
-                                <hr>
-                                <b>Cliente-xxxx</b><br>
-                                Rua dos Astronautas, 400<br>
-                                Compulândia/PC<br>
-                                CEP 01.010-101
-                            </h3>
-                        </label>
-                    </div>
-                    <div class="mb-4 mx-2 flex-even">
-                        <input type="radio" class="btn-check" name="endereco" autocomplete="off" id="end3">
-                        <label class="btn btn-outline-danger p-4 h-100 w-100" for="end3">
-                            <h3>
-                                <b class="text-dark">Casa de Praia</b><br>
-                                <hr>
-                                <b>Cliente-xxxx</b><br>
-                                Rua Caminho das aguas, 1001<br>
-                                Compulândia/PC<br>
-                                CEP 01.010-101
-                            </h3>
-                        </label>
+                <p class="mb-4">
+                    Aqui esta um exemplo:
+                    <b>Rua dos Programadores, nº 9999. JD. das Nações Unidas, CEP:000.000-000, São Paulo. Próximo ao Posto de gasolina Interlagos.</b>
+                </p>
+                <h1>   
+                </h1>
+                <!-- Novo campo para inserção de endereço -->
+                <div class="mb-4 mt-4">
+                    <h4>Inserir Endereço de entrega</h4>
+                    <div class="mb-3">
+                        <label for="enderecoInput" class="form-label">Endereço</label>
+                        <input type="text" class="form-control" id="enderecoInput" placeholder="Insira seu endereço">
                     </div>
                 </div>
+
+
+                  <!-- Botões de navegação -->
+
+
                 <div class="text-end border border-top-0 rounded-bottom p-4 pb-0">
                     <a href="fechamento_itens.html" class="btn btn-outline-success btn-lg mb-4">
                         Voltar aos Itens
                     </a>
-                    <a href="fechamento_pagamento.html" class="btn btn-danger btn-lg ms-2 mb-4">Continuar</a>
+                    <button id="btnContinuar" class="btn btn-danger btn-lg ms-2 mb-4">Continuar</button>
                 </div>
             </div>
         </main>
 
         <script>
-
-            
             document.addEventListener('DOMContentLoaded', function () {
-                // Quando a página carregar, atualize o ícone do carrinho
-                atualizarIconeCarrinho();
+                const botaoContinuar = document.getElementById('btnContinuar');
 
-                // Função para atualizar o ícone do carrinho
-                function atualizarIconeCarrinho() {
-                    const carrinho = obterCarrinho();
-                    atualizarContagemCarrinho(carrinho.length);
-                }
+                botaoContinuar.addEventListener('click', function () {
+                    const enderecoInput = document.getElementById('enderecoInput').value.trim();
 
-                // Função para obter o carrinho do armazenamento local
-                function obterCarrinho() {
-                    return JSON.parse(localStorage.getItem('carrinho')) || [];
-                }
-
-                // Função para atualizar a contagem do carrinho na barra de navegação
-                function atualizarContagemCarrinho(contagem) {
-                    const badge = document.getElementById('contadorCarrinho');
-                    if (badge) {
-                        badge.innerText = contagem;
+                    if (enderecoInput !== '') {
+                        // Armazena o endereço inserido pelo cliente no localStorage
+                        localStorage.setItem('enderecoCliente', enderecoInput);
+                        window.location.href = 'fechamento_pagamento.html';
+                    } else {
+                        alert('Por favor, preencha seu endereço antes de continuar.');
                     }
-                }
+                });
             });
-
-            // Função para adicionar um produto ao carrinho
-            function adicionarAoCarrinho(nomeProduto, precoProduto, imagemProduto) {
-                // ... (seu código existente)
-
-                // Depois de adicionar ao carrinho, chame a função para atualizar o ícone
-                atualizarIconeCarrinho();
-
-                // Notifique o cliente
-                alert('Produto adicionado ao carrinho!');
-            }
         </script>
-
 
         <footer class="border-top text-muted bg-light">
             <div class="container">
