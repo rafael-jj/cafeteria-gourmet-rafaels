@@ -33,32 +33,35 @@
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
 
-     <form id="registerForm" class="w-25 m-4">
-        <img class="mb-4" src="./img/slides/slide01.jpg" alt="" width="300" height="100">
-
-        <h2 class="mb-3">Cadastro do Usuário</h2>
-        <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="emailInp" placeholder="name@example.com">
-            <label for="floatingInput">Email</label>
-        </div>
-        <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="passInp" placeholder="Password">
-            <label for="floatingPassword">Senha</label>
-        </div>
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="fnameInp" placeholder="Nome" required>
-            <label for="floatingPassword">Nome</label>
-        </div>
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="lnameInp" placeholder="Sobrenome" required>
-            <label for="floatingPassword">Sobrenome</label>
-        </div>
-        <button type="submit" class="btn btn-primary" style="float: right;">Criar Cadastro</button>
-        <a href="index.html">
-            <button type="button" class="btn btn-primary" style="float: right;"
-                class="bnt btn-primary me-2">Voltar</button>
-        </a>
-    </form>
+        <main class="form-signin w-100 m-auto">
+            <form id="registerForm">
+                <img class="mb-4" src="./img/slides/slide01.jpg" alt="" width="300" height="100">
+                <h2 class="mb-3">Cadastro do Usuário</h2>
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="emailInp" placeholder="name@example.com">
+                    <label for="floatingInput">Email</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="passInp" placeholder="Password">
+                    <label for="floatingPassword">Senha</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="fnameInp" placeholder="Nome" required>
+                    <label for="floatingPassword">Nome</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="lnameInp" placeholder="Sobrenome" required>
+                    <label for="floatingPassword">Sobrenome</label>
+                </div>
+                <br>
+                <div class="mb-3">
+                <button type="submit" class="btn btn-primary float-end">Criar Cadastro</button>
+                <a href="index.html" class="float-end me-2">
+                    <button type="button" class="btn btn-primary">Voltar</button>
+                </a>
+                </div>
+            </form>
+        </main>
     
     <div id="successMessage" class="alert alert-success mt-3" style="display: none; max-width: 3000px;">
         Cadastro realizado com sucesso!

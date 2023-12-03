@@ -219,6 +219,19 @@
                     totalCompraTabela.innerText = totalCompra.toFixed(2);
                 }
             }
+                document.addEventListener("DOMContentLoaded", function () {
+                // ... (seu código existente)
+
+                // Adicione um evento de clique ao botão "Sair"
+                const btnSair = document.querySelector('[href="index.html"]');
+                btnSair.addEventListener('click', limparCarrinho);
+            });
+
+            // Função para limpar o carrinho
+            function limparCarrinho() {
+                // Limpar o carrinho no armazenamento local
+                localStorage.removeItem('carrinho');
+            }
         </script>
 
 
